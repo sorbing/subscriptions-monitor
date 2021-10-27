@@ -1,9 +1,11 @@
 <?php
 
+// Скрипт стоит запускать как демон, вместо CRON (чтобы не возиться с lock-ами)
+
 $config = $GLOBALS['config'];
 
 $left_sec = $config['left_days'] * 3600;
-$sql = "SELECT * FROM users WHERE is_confirmed = 1 AND notified_at IS NULL AND valid_ts <= (UNIX_TIMESTAMP() + {$left_sec});";
+$sql = "SELECT * FROM users WHERE is_confirmed = 1 AND notified_at IS NULL AND valid_ts <= (UNIX_TIMESTAMP() + {$left_sec}) LIMIT 20;";
 $result = mysqli_query($GLOBALS['link'], $sql, MYSQLI_USE_RESULT);
 
 $users = [];
