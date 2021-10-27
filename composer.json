@@ -1,0 +1,16 @@
+{
+    "name": "sorbing/subscriptions-monitor",
+    "description": "PHP monitoring of the users subscriptions",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stanislav Butsenko",
+            "email": "svbutsenko@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4"
+    }
+}
